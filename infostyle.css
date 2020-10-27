@@ -1,0 +1,242 @@
+body {
+    background: #000;
+    margin: 0 auto;
+    font-family: monospace;
+    font-size: 2em;
+}
+.main__wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.nav__wrapper {
+    display: flex;
+    background: #fff;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: stretch;
+    flex-grow: 0;
+}
+.nav__item {
+    padding: .5em;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+}
+
+.nav__wrapper a,
+.nav__wrapper a:link {
+    color: black;  
+    position: relative;
+}
+.nav__wrapper a.active::before,
+.nav__wrapper a:hover::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid rgb(183, 0, 255);;
+}
+
+.content__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    flex-grow: 1;
+}
+.content-section__wrapper {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+}
+.content-section__wrapper > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.section-text__wrapper {
+    position: relative;
+    margin-bottom: 3em;
+}
+
+.section-text__wrapper h1 {
+    margin: 0;
+    z-index: 3;
+}
+.section-text__wrapper h1::after {
+    content: "|";
+    opacity: 0;
+    animation: afteranim 2s step-end infinite 3s;
+    position: absolute;
+}
+
+.section-text__wrapper span:first-child {
+    font-size: calc(8em / 6);
+}
+.section-text__anim1 {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    animation: typing .5s steps(6, end);
+}
+.section-text__anim2 {
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    animation: typing2 1s steps(8, end);
+}
+
+.section-text__wrapper p {
+    font-size: 0.5em;
+}
+.section-button__wrapper a {
+    position: relative;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.section-button__wrapper a,
+.section-button__wrapper a:link {
+    color: white;
+    text-decoration: none;
+    transition: 0.1s color;
+}
+.section-button__wrapper a:hover {
+    color: black;
+}
+
+.section-button__wrapper a:before,
+.section-button__wrapper a::after {
+    content: "";
+    border: 0.01em solid  rgb(183, 0, 255);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.section-button__wrapper a:before {
+    left: 0.05em;
+    top: 0.05em;
+    background-color: rgb(183, 0, 255);
+    transition: 0.1s left, 0.1s top, 0.2s background-color;
+}
+.section-button__wrapper a:after {
+    right: 0.05em;
+    bottom: 0.05em;
+    background-color: black;
+    transition: 0.1s right, 0.1s bottom, 0.2s background-color;
+}
+
+.section-button__wrapper a:hover:before {
+    left: -0.05em;
+    top: -0.05em;
+    background-color: black;
+}
+.section-button__wrapper a:hover:after {
+    right: -0.2em;
+    bottom: -0.2em;
+    background-color:rgb(183, 0, 255);
+}
+
+.description__wrapper {
+    font-size: 0.5em;
+    color: white;
+}
+
+.description__wrapper span {
+    color: rgb(183, 0, 255);
+}
+
+.flex-col-1 {
+    flex-basis: calc(calc(100% / 12) * 1);
+}
+.flex-col-3 {
+    flex-basis: calc(calc(100% / 12) * 3);
+}
+.flex-col-9 {
+    flex-basis: calc(calc(100% / 12) * 9);
+}
+.flex-col-11 {
+    flex-basis: calc(calc(100% / 12) * 11);
+}
+.black-box{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    animation: backgroundanim 3s;
+    z-index: -1;
+}
+
+@keyframes backgroundanim{
+    from, 50% { background: black;z-index: 1;}
+    to{z-index: 1;}
+}
+
+@keyframes afteranim {
+    from,
+    to {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes typing2 {
+    from, 50% {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .main__wrapper{
+        flex-direction: column;
+        font-size: 1em;
+    }
+    .nav__wrapper{
+        position: fixed;
+        bottom: 0;
+        flex-direction: row;
+        width: 100vw;
+        box-sizing: border-box;
+
+    }
+    .nav__item{
+        width: 80px;
+    }
+    .content__wrapper{
+        flex-direction: column;
+    }
+    .content-section__wrapper{
+        justify-content: center;
+        flex-basis: 100vh;
+
+    }
+    .content-description__wrapper{
+        margin-bottom: 5em;
+    }
+}
+
+@media only screen and (max-width: 425px){
+    .nav__item{
+        width: calc(100vw / 5);
+    }
+}

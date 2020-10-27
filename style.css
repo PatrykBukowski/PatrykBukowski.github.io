@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 body {
     background: #000;
     margin: 0 auto;
@@ -7,19 +14,33 @@ body {
 .main__wrapper {
     height: 100vh;
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 }
 .nav__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background: #fff;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: stretch;
-    flex-grow: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0;
 }
 .nav__item {
     padding: .5em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     text-align: center;
     position: relative;
 }
@@ -39,22 +60,43 @@ body {
 }
 
 .content__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: stretch;
-    flex-grow: 1;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: stretch;
+        -ms-flex-pack: stretch;
+            justify-content: stretch;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
 }
 .content-section__wrapper {
     color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     justify-self: center;
 }
 .content-section__wrapper > * {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-shrink: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
 }
 
 .section-text__wrapper {
@@ -69,8 +111,13 @@ body {
 .section-text__wrapper h1::after {
     content: "|";
     opacity: 0;
-    animation: afteranim 2s step-end infinite 3s;
+    -webkit-animation: afteranim 2s step-end infinite 3s;
+            animation: afteranim 2s step-end infinite 3s;
     position: absolute;
+}
+.section-text__wrapper p{
+    margin: 2em 4em;
+    text-align: justify;
 }
 
 .section-text__wrapper span:first-child {
@@ -80,13 +127,15 @@ body {
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
-    animation: typing .5s steps(6, end);
+    -webkit-animation: typing .5s steps(6, end);
+            animation: typing .5s steps(6, end);
 }
 .section-text__anim2 {
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
-    animation: typing2 1s steps(8, end);
+    -webkit-animation: typing2 1s steps(8, end);
+            animation: typing2 1s steps(8, end);
 }
 
 .section-text__wrapper p {
@@ -95,13 +144,16 @@ body {
 .section-button__wrapper a {
     position: relative;
     padding: 10px 20px;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .section-button__wrapper a,
 .section-button__wrapper a:link {
     color: white;
     text-decoration: none;
+    -webkit-transition: 0.1s color;
+    -o-transition: 0.1s color;
     transition: 0.1s color;
 }
 .section-button__wrapper a:hover {
@@ -122,12 +174,16 @@ body {
     left: 0.05em;
     top: 0.05em;
     background-color: rgb(183, 0, 255);
+    -webkit-transition: 0.1s left, 0.1s top, 0.2s background-color;
+    -o-transition: 0.1s left, 0.1s top, 0.2s background-color;
     transition: 0.1s left, 0.1s top, 0.2s background-color;
 }
 .section-button__wrapper a:after {
     right: 0.05em;
     bottom: 0.05em;
     background-color: black;
+    -webkit-transition: 0.1s right, 0.1s bottom, 0.2s background-color;
+    -o-transition: 0.1s right, 0.1s bottom, 0.2s background-color;
     transition: 0.1s right, 0.1s bottom, 0.2s background-color;
 }
 
@@ -152,16 +208,20 @@ body {
 }
 
 .flex-col-1 {
-    flex-basis: calc(calc(100% / 12) * 1);
+    -ms-flex-preferred-size: calc(calc(100% / 12) * 1);
+        flex-basis: calc(calc(100% / 12) * 1);
 }
 .flex-col-3 {
-    flex-basis: calc(calc(100% / 12) * 3);
+    -ms-flex-preferred-size: calc(calc(100% / 12) * 3);
+        flex-basis: calc(calc(100% / 12) * 3);
 }
 .flex-col-9 {
-    flex-basis: calc(calc(100% / 12) * 9);
+    -ms-flex-preferred-size: calc(calc(100% / 12) * 9);
+        flex-basis: calc(calc(100% / 12) * 9);
 }
 .flex-col-11 {
-    flex-basis: calc(calc(100% / 12) * 11);
+    -ms-flex-preferred-size: calc(calc(100% / 12) * 11);
+        flex-basis: calc(calc(100% / 12) * 11);
 }
 .black-box{
     position: fixed;
@@ -170,13 +230,29 @@ body {
     background: transparent;
     margin: 0;
     padding: 0;
-    animation: backgroundanim 3s;
+    -webkit-animation: backgroundanim 3s;
+            animation: backgroundanim 3s;
     z-index: -1;
+}
+
+@-webkit-keyframes backgroundanim{
+    from, 50% { background: black;z-index: 1;}
+    to{z-index: 1;}
 }
 
 @keyframes backgroundanim{
     from, 50% { background: black;z-index: 1;}
     to{z-index: 1;}
+}
+
+@-webkit-keyframes afteranim {
+    from,
+    to {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 @keyframes afteranim {
@@ -189,8 +265,25 @@ body {
     }
 }
 
+@-webkit-keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 @keyframes typing {
     from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@-webkit-keyframes typing2 {
+    from, 50% {
         width: 0;
     }
     to {
@@ -208,26 +301,39 @@ body {
 
 @media only screen and (max-width: 768px){
     .main__wrapper{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
         font-size: 1em;
     }
     .nav__wrapper{
         position: fixed;
         bottom: 0;
-        flex-direction: row;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
         width: 100vw;
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
 
     }
     .nav__item{
         width: 80px;
     }
     .content__wrapper{
-        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
     }
     .content-section__wrapper{
-        justify-content: center;
-        flex-basis: 100vh;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -ms-flex-preferred-size: 100vh;
+            flex-basis: 100vh;
 
     }
     .content-description__wrapper{
